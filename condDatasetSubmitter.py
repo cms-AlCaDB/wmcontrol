@@ -208,7 +208,7 @@ def getCMSSWReleaseFromPath(thePath):
 
 def getDriverDetails(Type, B0T, HIon, recoRelease):
     HLTBase = {"reqtype":"HLT",
-                "steps":"L1REPACK:Full,HLT,DQM", #replaced DQM:triggerOfflineDQMSource with DQM
+                "steps":"L1REPACK:FullSimTP,HLT,DQM", #replaced DQM:triggerOfflineDQMSource with DQM
                 "procname":"HLT2",
                 "datatier":"FEVTDEBUGHLT,DQM ",
                 "eventcontent":"FEVTDEBUGHLT,DQM",
@@ -234,7 +234,7 @@ def getDriverDetails(Type, B0T, HIon, recoRelease):
                     "custcommands":''}
 
     if options.HLT:
-        HLTBase.update({"steps":"L1REPACK:Full,HLT:%s,DQM" % (options.HLT),
+        HLTBase.update({"steps":"L1REPACK:FullSimTP,HLT:%s,DQM" % (options.HLT),
                 "dumppython":True})
 
     if Type == 'HLT':
@@ -244,7 +244,7 @@ def getDriverDetails(Type, B0T, HIon, recoRelease):
         return HLTBase
     elif Type in ['HLT+RECO','HLT+RECO+ALCA']:
         if options.HLT:
-            HLTBase.update({"steps":"L1REPACK:Full,HLT:%s" % (options.HLT),
+            HLTBase.update({"steps":"L1REPACK:FullSimTP,HLT:%s" % (options.HLT),
                             "custcommands":"\ntry:\n\tif process.RatesMonitoring in process.schedule: process.schedule.remove( process.RatesMonitoring );\nexcept: pass",
                             "custconditions":"",
                             #"output":'[{"e":"RAW","t":"RAW","o":["drop FEDRawDataCollection_rawDataCollector__LHC"]}]',
@@ -254,7 +254,7 @@ def getDriverDetails(Type, B0T, HIon, recoRelease):
                             "dumppython":True})
 
         else:
-            HLTBase.update({"steps":"L1REPACK:Full,HLT",
+            HLTBase.update({"steps":"L1REPACK:FullSimTP,HLT",
                             "custcommands":"\ntry:\n\tif process.RatesMonitoring in process.schedule: process.schedule.remove( process.RatesMonitoring );\nexcept: pass",
                             "custconditions":"",
                             #"datatier":"RAW",
