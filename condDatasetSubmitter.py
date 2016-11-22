@@ -274,7 +274,11 @@ def getDriverDetails(Type, B0T, HIon, pA, recoRelease):
                         "eventcontent":"RECO,DQM",
                         #"inputcommands":'keep *',
                         "inputcommands":'',
-                        "custcommands":'',
+                        "custcommands":"process.SiStripMonitorTrackMB.Mod_On        = True; " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterCharge.ringView       = cms.bool(True); " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterChargePerCM.ringView  = cms.bool(True); " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterStoNCorr.ringView     = cms.bool(True); " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterChargePerCM.layerView = cms.bool(True)",
                         "custconditions":'',
                         "customise":'',
                         "era":"Run2_2016",
@@ -311,7 +315,11 @@ def getDriverDetails(Type, B0T, HIon, pA, recoRelease):
                         "eventcontent":"RECO,DQM",
                         #"inputcommands":'keep *',
                         "inputcommands":'',
-                        "custcommands":'',
+                        "custcommands":"process.SiStripMonitorTrackMB.Mod_On        = True; " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterCharge.ringView       = cms.bool(True); " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterChargePerCM.ringView  = cms.bool(True); " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterStoNCorr.ringView     = cms.bool(True); " +\
+                                       "process.SiStripMonitorTrackMB.TH1ClusterChargePerCM.layerView = cms.bool(True)",
                         "custconditions":'',
                         "customise":'',
                         "era":"Run2_2016",
